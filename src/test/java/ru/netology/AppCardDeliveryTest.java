@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AppCardDeliveryTest {
     @Test
-    void trueInputCardDeliveryAppTest() {
+    void trueInputCardDeliveryAppTest() throws InterruptedException {
         open("http://localhost:9999");
         $("[data-test-id = 'city'] input").setValue("Москва");
         Calendar calendar = Calendar.getInstance();
