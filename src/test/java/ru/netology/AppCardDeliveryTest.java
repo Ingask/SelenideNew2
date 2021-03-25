@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AppCardDeliveryTest {
     @Test
-    void trueInputCardDeliveryAppTest(){
+    void trueInputCardDeliveryAppTest() {
         open("http://localhost:9999");
         $("[data-test-id = 'city'] input").setValue("Москва");
         Calendar calendar = Calendar.getInstance();
@@ -25,8 +25,8 @@ public class AppCardDeliveryTest {
         $("[data-test-id=name] input").setValue("Иванов Иван");
         $("[data-test-id=phone] input").setValue("+71234567890");
         $("[data-test-id=agreement]").click();
-        $$("button").find(exactText("Забронировать")).click();
-        $("[data-test-id=notification]").waitUntil(visible, 15000)
+        $$("[class=button__text]").find(exactText("Забронировать")).click();
+        $("[class=notification__content]").waitUntil(visible, 15000)
                 .shouldHave(text("Встреча успешно забронирована на"));
 
     }
